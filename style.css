@@ -31,7 +31,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  padding: 15px 40px;
+  padding: 1px 40px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -65,16 +65,21 @@ header .logo {
 }
 
 .garage-name p {
-  margin: 5px 0;
-  font-size: 2.0rem;
+  margin: 2px 0;             /* Less space between lines */
+  font-size: 1.2rem;         /* More compact than before */
   color: #f1f1f1;
   font-weight: 700;
 }
 
 .garage-name .location {
-  font-size: 1.5rem;
-  /* font-style: italic; */
+  font-size: 1rem;           /* Make font more compact */
   color: #080908;
+  font-weight: 500;
+  margin-top: 0;             /* Remove extra space above */
+  margin-bottom: 0;          /* Remove extra space below */
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  display: block;
 }
 
 /* Navigation */
@@ -549,3 +554,29 @@ footer {
 }
 
 /* ===== End Responsive ===== */
+.garage-name nav {
+  margin-top: 2px; /* Was 10px, now less space above nav */
+}
+
+.garage-name nav ul {
+  justify-content: center;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.garage-name nav a {
+  color: #0794f9;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-size: 1rem;
+}
+
+.garage-name nav a:hover {
+  color: #e63946;
+}
+
+/* Remove old nav styles if needed */
