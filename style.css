@@ -48,7 +48,9 @@ header .logo {
   text-align: center;
   width: 100%;
   pointer-events: none; /* Prevents overlap issues */
+  top: 40px; /* Reduce from default to move closer to logo */
 }
+
 .header-top .logo {
   z-index: 2;
   pointer-events: auto;
@@ -587,5 +589,17 @@ footer {
   nav,
   .garage-name nav {
     display: none !important; /* Hide navbar on mobile */
+  }
+}
+
+/* Move garage name closer to the logo */
+.garage-name {
+  top: 40px; /* Reduce from default to move closer to logo */
+}
+
+/* On mobile, add margin-top for spacing if needed */
+@media (max-width: 600px) {
+  .garage-name {
+    margin-top: 8px; /* Small space between logo and garage name */
   }
 }
