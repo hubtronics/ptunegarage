@@ -377,73 +377,37 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px 5px;
-    gap: 6px;
-  }
-  .map-icon {
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    align-items: center;
-    order: 1;
+    padding: 8px 5px;
+    gap: 0;
+    position: relative;
   }
   header .logo {
-    width: 100px;
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
     margin-bottom: 0;
-    order: 2;
+    display: block;
+    position: relative;
+    z-index: 2;
   }
   .garage-name {
-    position: static;
-    transform: none;
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 70px); /* Overlap bottom of logo by 28px, adjust as needed */
+    transform: translateX(-50%);
+    width: 90vw;
     text-align: center;
-    pointer-events: auto;
     margin-top: 0;
-    order: 3;
+    padding-top: 4px;
+    background: rgba(255,255,255,0.85); /* Optional: makes text readable */
+    z-index: 1; /* Logo stays above */
+    pointer-events: auto;
   }
-  .garage-name h1 {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    margin-bottom: 2px;
-  }
+  .garage-name h1,
   .garage-name p,
   .garage-name .location {
-    font-size: 0.85rem;
-    margin: 1px 0;
-  }
-  nav {
-    width: 100%;
-    background: transparent;
-    padding: 0;
-    margin-top: 8px;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-    display: flex !important;
-    padding: 0;
     margin: 0;
-  }
-  nav a {
-    font-size: 1rem;
-    padding: 12px 0;
-    border-radius: 14px;
-    text-align: center;
-    width: 100%;
-    min-width: 120px;
-    background: #0794f9;
-    color: #fff;
-    margin: 0;
-    transition: background 0.3s, transform 0.3s;
-  }
-  nav a:hover, nav a:focus {
-    background: #e63946;
-    color: #fff;
-    transform: scale(1.05);
-  }
-  .menu-btn {
-    display: none;
+    line-height: 1.1;
   }
 }
 
@@ -601,5 +565,67 @@ footer {
 @media (max-width: 600px) {
   .garage-name {
     margin-top: 8px; /* Small space between logo and garage name */
+  }
+}
+
+/* On mobile, make garage name sit directly below the logo with almost no gap */
+@media (max-width: 600px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 5px; /* Slightly less padding */
+    gap: 0;
+  }
+  header .logo {
+    width: 90vw;         /* Logo uses most of screen width */
+    max-width: 350px;    /* Prevents it from being too large */
+    height: auto;
+    margin-bottom: 0;    /* Remove margin below logo */
+    display: block;
+  }
+  .garage-name {
+    margin-top: 0 !important;       /* No extra space below logo */
+    padding-top: 0 !important;
+  }
+  .garage-name h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* On mobile, make garage name position static so it doesn't overlap the logo */
+@media (max-width: 600px) {
+  .garage-name {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    pointer-events: auto;
+  }
+}
+
+/* On mobile, hide the logo and move garage name to top */
+@media (max-width: 600px) {
+  header .logo {
+    display: none !important;
+  }
+  .garage-name {
+    position: static !important;
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Remove white box background from garage name on mobile */
+@media (max-width: 600px) {
+  .garage-name {
+    background: none !important;
   }
 }
