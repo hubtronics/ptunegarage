@@ -518,6 +518,13 @@ footer {
   }
 }
 
+/* Hide map icon on mobile */
+@media (max-width: 600px) {
+  .map-icon {
+    display: none !important;
+  }
+}
+
 .map-modal {
   display: none;
   position: fixed;
