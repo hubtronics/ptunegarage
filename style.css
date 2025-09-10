@@ -575,4 +575,10 @@ footer {
   color: #e63946;
 }
 
-/* Remove old nav styles if needed */
+/* Responsive: Hide navbar on mobile */
+@media (max-width: 600px) {
+  nav,
+  .garage-name nav {
+    display: none !important; /* Hide navbar on mobile */
+  }
+}
