@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powertune Auto - Westlands Garage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <a href="index.html">
+        <img src="images/pwtune.png" alt="Powertune Auto Logo" class="logo">
+      </a>
+      <div class="garage-name">
+        <h1>Powertune Auto Garage</h1>
+        <p>Precision • Power • Performance</p>
+        <p class="location">Westlands, Muthithi 60</p>
+      </div>
+      <span class="map-icon" id="openMap">
+        <img src="images/ggle.svg" alt="Map" style="width:32px;height:32px;cursor:pointer;">
+      </span>
+    </div>
+    <div class="header-icons header-icons-left">
+      <img src="images/bmw.svg" alt="BMW" class="brand-icon">
+      <img src="images/audi.svg" alt="Audi" class="brand-icon">
+    </div>
+    <nav>
+      <button class="menu-btn" aria-label="Open menu">
+        &#9776;
+      </button>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons header-icons-right">
+      <img src="images/vw.svg" alt="VW" class="brand-icon">
+      <img src="images/benz.svg" alt="Benz" class="brand-icon">
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image-scroll">
+      <img src="images/IMG-20250909-WA0013 (7).jpg" alt="Hero 1">
+      <img src="images/IMG-20250909-WA0013 (21).jpg" alt="Hero 2">
+      <!-- Add more images as needed -->
+    </div>
+    <h2>Your Trusted Auto Garage in Nairobi</h2>
+    <p>Expert car servicing, repairs & diagnostics.</p>
+    <a href="#contact" class="btn">Book Appointment</a>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service">
+      <h3>Engine Diagnostics</h3>
+      <p>Modern tools to detect and fix engine issues.</p>
+    </div>
+    <div class="service">
+      <h3>Car Servicing</h3>
+      <p>Regular maintenance for smooth performance.</p>
+    </div>
+    <div class="service">
+      <h3>Repairs</h3>
+      <p>From brakes to suspension, we fix it all.</p>
+    </div>
+  </div>
+  <div class="brand-scroll">
+    <img src="images/bmw.svg" alt="BMW" class="brand-svg">
+    <img src="images/audi.svg" alt="Audi" class="brand-svg">
+    <img src="images/vw.svg" alt="VW" class="brand-svg">
+    <img src="images/benz.svg" alt="Benz" class="brand-svg">
+    <!-- Duplicate for seamless loop -->
+    <img src="images/bmw.svg" alt="BMW" class="brand-svg">
+    <img src="images/audi.svg" alt="Audi" class="brand-svg">
+    <img src="images/vw.svg" alt="VW" class="brand-svg">
+    <img src="images/benz.svg" alt="Benz" class="brand-svg">
+  </div>
+</section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Our Garage</h2>
+    <div class="gallery">
+      <img src="images/IMG-20250909-WA0013 (1).jpg" alt="Garage Image 1">
+      <img src="images/IMG-20250909-WA0013 (7).jpg" alt="Garage Image 2">
+      <img src="images/IMG-20250909-WA0013 (6).jpg" alt="Garage Image 3">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Powertune Auto is a professional garage located at Muthithi 60, Westlands. We specialize in quality repairs, diagnostics, and servicing for all vehicle types. Our goal is to keep your car running at its best.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Location:</strong> Muthithi 60, Westlands</p>
+    <p><strong>Phone:</strong> +254 7XX XXX XXX</p>
+    <p><strong>Email:</strong> info@powertuneauto.co.ke</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Powertune Auto | All Rights Reserved</p>
+  </footer>
+
+  <!-- Map Modal -->
+<div id="mapModal" class="map-modal">
+  <div class="map-modal-content">
+    <span class="close-map" id="closeMap">&times;</span>
+    <iframe
+      src="https://www.google.com/maps?q=Muthithi+60,+Westlands,+Nairobi&output=embed"
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+  <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('nav ul');
+
+  menuBtn.addEventListener('click', () => {
+    if (window.innerWidth <= 600) {
+      navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+
+  // Optional: Hide nav links when resizing back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 600) {
+      navLinks.style.display = 'flex';
+    } else {
+      navLinks.style.display = 'none';
+    }
+  });
+
+  // Map modal JS
+  document.getElementById('openMap').onclick = function() {
+    document.getElementById('mapModal').style.display = 'flex';
+  };
+  document.getElementById('closeMap').onclick = function() {
+    document.getElementById('mapModal').style.display = 'none';
+  };
+  // Optional: close modal when clicking outside content
+  document.getElementById('mapModal').onclick = function(e) {
+    if (e.target === this) this.style.display = 'none';
+  };
+</script>
+</body>
+</html>
