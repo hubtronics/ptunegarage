@@ -1,5 +1,13 @@
-document.querySelector("form").addEventListener("submit", function(e) {
+document.getElementById('bookingForm').onsubmit = function(e) {
   e.preventDefault();
-  alert("Thank you! We’ll get back to you shortly.");
-  this.reset();
-});
+  fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById('bookingSuccess').style.display = 'block';
+      this.reset();
+    }
+  });
+};

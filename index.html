@@ -103,16 +103,27 @@
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Location:</strong> Muthithi 60, Westlands</p>
-    <p><strong>Phone:</strong> +254 7XX XXX XXX</p>
-    <p><strong>Email:</strong> info@powertuneauto.co.ke</p>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
+    <h2>Book Your Appointment</h2>
+    <form id="bookingForm" action="https://formspree.io/f/mkgvyvpe" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+      <input type="text" name="vin" placeholder="Vehicle VIN" required>
+      <input type="text" name="make" placeholder="Vehicle Make" required>
+      <input type="text" name="model" placeholder="Vehicle Model" required>
+      <select name="service" required>
+        <option value="" disabled selected>Select Service</option>
+        <option value="diagnostics">Engine Diagnostics</option>
+        <option value="servicing">Car Servicing</option>
+        <option value="repairs">Repairs</option>
+      </select>
+      <input type="date" name="date" required>
+      <textarea name="message" placeholder="Additional Details"></textarea>
+      <button type="submit">Book Appointment</button>
     </form>
+    <div id="bookingSuccess" style="display:none; color:green; margin-top:10px;">
+      Thank you! Your booking has been received.
+    </div>
   </section>
 
   <!-- Footer -->
@@ -130,36 +141,6 @@
   </div>
 </div>
 
-  <script>
-  const menuBtn = document.querySelector('.menu-btn');
-  const navLinks = document.querySelector('nav ul');
-
-  menuBtn.addEventListener('click', () => {
-    if (window.innerWidth <= 600) {
-      navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
-    }
-  });
-
-  // Optional: Hide nav links when resizing back to desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 600) {
-      navLinks.style.display = 'flex';
-    } else {
-      navLinks.style.display = 'none';
-    }
-  });
-
-  // Map modal JS
-  document.getElementById('openMap').onclick = function() {
-    document.getElementById('mapModal').style.display = 'flex';
-  };
-  document.getElementById('closeMap').onclick = function() {
-    document.getElementById('mapModal').style.display = 'none';
-  };
-  // Optional: close modal when clicking outside content
-  document.getElementById('mapModal').onclick = function(e) {
-    if (e.target === this) this.style.display = 'none';
-  };
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
