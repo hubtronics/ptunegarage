@@ -89,24 +89,36 @@ nav {
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #fff;
+  color: #0794f9;
   font-weight: bold;
   text-transform: uppercase;
-  transition: color 0.3s;
+  transition: 
+    color 0.3s,
+    background 0.3s,
+    transform 0.3s;
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 22px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-nav a:hover {
-  color: #e63946;
+nav a:hover, nav a:focus {
+  color: #fff;
+  background: #e63946;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 14px rgba(230,57,70,0.15);
 }
 
 /* Hide menu button by default */
@@ -127,7 +139,7 @@ nav a:hover {
   text-align: center;
   padding: 70px 10px;
   overflow: hidden;
-  background: #e7dede; /* fallback background */
+  background: #f6f2f2; /* fallback background */
   min-height: 200px;
 }
 
@@ -360,91 +372,75 @@ footer {
 
 @media (max-width: 600px) {
   .header-top {
-    flex-direction: row; /* Place items in a row */
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 10px 5px;
-    gap: 10px;
-  }
-  header .logo {
-    width: 120px;
-    margin-bottom: 0;
+    gap: 6px;
   }
   .map-icon {
     margin-left: 0;
-    margin-right: 10px;
+    margin-right: 0;
     display: flex;
     align-items: center;
-    order: 1; /* Ensure map icon stays left of logo if desired */
+    order: 1;
+  }
+  header .logo {
+    width: 100px;
+    margin-bottom: 0;
+    order: 2;
   }
   .garage-name {
     position: static;
     transform: none;
     width: 100%;
-    text-align: left;
+    text-align: center;
     pointer-events: auto;
     margin-top: 0;
-    order: 2;
+    order: 3;
   }
   .garage-name h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
+    margin-bottom: 2px;
   }
   .garage-name p,
   .garage-name .location {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin: 1px 0;
+  }
+  nav {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin-top: 8px;
   }
   nav ul {
     flex-direction: column;
-    gap: 10px;
-    padding: 0 10px;
+    gap: 8px;
+    align-items: stretch;
+    display: flex !important;
+    padding: 0;
+    margin: 0;
   }
-  nav ul {
-    display: none;
+  nav a {
+    font-size: 1rem;
+    padding: 12px 0;
+    border-radius: 14px;
+    text-align: center;
+    width: 100%;
+    min-width: 120px;
+    background: #0794f9;
+    color: #fff;
+    margin: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+  nav a:hover, nav a:focus {
+    background: #e63946;
+    color: #fff;
+    transform: scale(1.05);
   }
   .menu-btn {
-    display: inline-block;
-  }
-  .hero {
-    padding: 40px 5px;
-    min-height: 180px;
-  }
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .hero .btn {
-    padding: 10px 18px;
-    font-size: 1rem;
-  }
-  .service-list {
-    flex-direction: column;
-    gap: 15px;
-    display: flex; /* Show service cards on mobile */
-  }
-  .service {
-    min-width: 0;
-    max-width: 100%;
-    padding: 10px;
-  }
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .gallery img {
-    height: 120px;
-  }
-  section {
-    padding: 30px 5px;
-  }
-  form {
-    max-width: 100%;
-    padding: 0 5px;
-  }
-  /* Remove mobile-only dropdown for services */
-  .service-dropdown {
     display: none;
   }
 }
