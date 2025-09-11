@@ -18,7 +18,7 @@ a {
 
 /* ===== Header ===== */
 header {
-  background: linear-gradient(135deg, #2c3f3f, #cbd0da);
+  background: linear-gradient(135deg, #1e201d, #263552);
   color: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   position: sticky;
@@ -75,7 +75,7 @@ header .logo {
 
 .garage-name .location {
   font-size: 1rem;           /* Make font more compact */
-  color: #080908;
+  color: #f1f3f1;
   font-weight: 500;
   margin-top: 0;             /* Remove extra space above */
   margin-bottom: 0;          /* Remove extra space below */
@@ -86,7 +86,7 @@ header .logo {
 
 /* Navigation */
 nav {
-  background: #6c929b;
+  background: #9d2c2c;
   padding: 10px 0;
 }
 
@@ -100,7 +100,7 @@ nav ul {
 }
 
 nav a {
-  color: #0794f9;
+  color: #a60404;
   font-weight: bold;
   text-transform: uppercase;
   transition: 
@@ -108,7 +108,7 @@ nav a {
     background 0.3s,
     transform 0.3s;
   font-size: 1rem;
-  padding: 8px 18px;
+  padding: 10px 18px;
   border-radius: 22px;
   background: transparent;
   position: relative;
