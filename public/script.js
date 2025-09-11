@@ -41,3 +41,21 @@ document.querySelectorAll('nav a').forEach(link => {
     }
   });
 });
+
+// Auto-scroll gallery slider on mobile only
+if (window.innerWidth <= 600) {
+  const gallerySlider = document.querySelector('.gallery-slider');
+  const galleryImages = document.querySelectorAll('.gallery-slider img');
+  let currentGalleryIndex = 0;
+
+  function showGalleryImage(index) {
+    gallerySlider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  if (gallerySlider && galleryImages.length > 1) {
+    setInterval(() => {
+      currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+      showGalleryImage(currentGalleryIndex);
+    }, 3000); // Change image every 3 seconds
+  }
+}
