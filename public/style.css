@@ -393,41 +393,104 @@ footer {
 }
 
 @media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+
   .header-top {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 8px 5px;
+    padding: 12px 8px;
     gap: 0;
-    position: relative;
   }
+
   header .logo {
     width: 90vw;
-    max-width: 350px;
+    max-width: 220px;
     height: auto;
     margin-bottom: 0;
     display: block;
-    position: relative;
-    z-index: 2;
   }
+
   .garage-name {
-    position: absolute;
-    left: 50%;
-    top: calc(50% - 70px); /* Overlap bottom of logo by 28px, adjust as needed */
-    transform: translateX(-50%);
-    width: 90vw;
-    text-align: center;
     margin-top: 0;
-    padding-top: 4px;
-    background: rgba(255,255,255,0.85); /* Optional: makes text readable */
-    z-index: 1; /* Logo stays above */
-    pointer-events: auto;
+    padding-top: 0;
+    text-align: center;
   }
-  .garage-name h1,
+
+  .garage-name h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
   .garage-name p,
   .garage-name .location {
-    margin: 0;
-    line-height: 1.1;
+    font-size: 0.95rem;
+    margin: 2px 0;
+    line-height: 1.2;
+  }
+
+  #services {
+    padding: 18px 6px;
+    margin: 18px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    max-width: 100vw;
+  }
+
+  .service-list {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .service {
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    margin-bottom: 0;
+  }
+
+  .brand-scroll {
+    gap: 10px;
+    padding: 10px 0 4px 0;
+    justify-content: center;
+  }
+
+  .brand-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  #gallery .gallery img {
+    width: 100%;
+    max-width: 320px;
+    margin: 8px auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  #contact,
+  footer {
+    padding: 16px 8px;
+    font-size: 1rem;
+  }
+
+  .footer-details h3,
+  .footer-details h4 {
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+
+  .footer-details p {
+    font-size: 0.95rem;
+    margin: 4px 0;
   }
 }
 
