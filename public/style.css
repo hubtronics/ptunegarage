@@ -313,11 +313,31 @@ form button:hover {
 
 /* ===== Footer ===== */
 footer {
-  background: #0d1b2a;
+  background: #222;
   color: #fff;
+  padding: 30px 10px 15px 10px;
   text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
+  font-size: 1rem;
+}
+
+.footer-details h3, .footer-details h4 {
+  margin-top: 0;
+  color: #e63946;
+}
+
+.footer-details a {
+  color: #0794f9;
+  text-decoration: underline;
+}
+
+.footer-details p {
+  margin: 6px 0;
+}
+
+.footer-copyright {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #aaa;
 }
 
 /* ===== Header Icons ===== */
