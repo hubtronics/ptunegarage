@@ -125,12 +125,14 @@ nav a:hover, nav a:focus {
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  color: #fff;
+  color: #222;
   text-align: center;
-  padding: 100px 30px;
+  padding: 80px 20px 60px 20px;
   overflow: hidden;
-  background: #f6f2f2;
-  min-height: 200px;
+  background: linear-gradient(120deg, #e3f6fd 0%, #e0e7ef 60%, #c9d6e3 100%);
+  min-height: 220px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(7,148,249,0.07);
 }
 
 .hero-image-scroll {
@@ -184,26 +186,43 @@ nav a:hover, nav a:focus {
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(19, 19, 19, 0.6);
-  z-index: 2;
+  display: none;
 }
 
 .hero h2, .hero p, .hero .btn {
   position: relative;
   z-index: 3;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 .hero h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+  color: #0794f9;
+  font-weight: 900;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #fff, 0 0 2px #0794f9;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  padding: 8px 18px;
+  display: inline-block;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 8px rgba(249, 247, 247, 0.8);
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: inline-block;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #e3f2fd;
+  margin-bottom: 14px;
 }
 
 .hero .btn {
@@ -216,10 +235,7 @@ nav a:hover, nav a:focus {
   font-weight: bold;
   transition: 0.3s;
   z-index: 3;
-}
-
-.hero .btn:hover {
-  background: #ff4d6d;
+  margin-top: 0;
 }
 
 /* ===== Sections ===== */
@@ -546,37 +562,32 @@ footer {
     filter: brightness(0.7); /* Slightly darken image */
   }
   .hero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(19, 19, 19, 0.55); /* Darker overlay for contrast */
-    z-index: 2;
-    border-radius: 18px;
+    display: none;
   }
   .hero h2 {
-    position: relative;
-    z-index: 3;
     font-size: 1.5rem;
-    color: #fff;
+    color: #0794f9;
     font-weight: 900;
-    text-shadow: 0 2px 12px #000, 0 0 2px #0794f9;
     margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px #fff, 0 0 2px #0794f9;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
     padding: 8px 12px;
-    background: rgba(7,148,249,0.7);
-    border-radius: 8px;
     display: inline-block;
+    margin-bottom: 10px;
   }
   .hero p {
-    position: relative;
-    z-index: 3;
     font-size: 1.1rem;
-    color: #fff;
-    text-shadow: 0 2px 8px #000;
+    color: #222;
     margin: 0 0 10px 0;
     padding: 6px 10px;
-    background: rgba(0,0,0,0.35);
-    border-radius: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 8px;
     display: inline-block;
+    font-weight: 500;
+    text-shadow: 0 2px 8px #e3f2fd;
+    margin-bottom: 12px;
   }
   .hero .btn {
     position: relative;
@@ -1142,5 +1153,76 @@ header .btn:hover,
     filter: none;
     position: relative;
     z-index: 2;
+  }
+}
+
+/* Hero section: softer, less bright background */
+.hero {
+  position: relative;
+  color: #222;
+  text-align: center;
+  padding: 80px 20px 60px 20px;
+  overflow: hidden;
+  background: linear-gradient(120deg, #e3f6fd 0%, #e0e7ef 60%, #c9d6e3 100%);
+  min-height: 220px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(7,148,249,0.07);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 8px 32px 8px;
+    min-height: 180px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #e3f6fd 0%, #e0e7ef 100%);
+    box-shadow: 0 4px 18px #e3f2fd;
+  }
+  .hero h2 {
+    font-size: 1.35rem;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background: rgba(255,255,255,0.6);
+  }
+  .hero p {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.5);
+  }
+}
+
+/* Make hero text stack vertically and clearly */
+.hero h2,
+.hero p,
+.hero .btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* Add spacing between hero elements */
+.hero h2 {
+  margin-bottom: 10px;
+}
+.hero p {
+  margin-bottom: 14px;
+}
+.hero .btn {
+  margin-top: 0;
+}
+
+/* Mobile: tighter spacing */
+@media (max-width: 600px) {
+  .hero h2 {
+    margin-bottom: 8px;
+  }
+  .hero p {
+    margin-bottom: 12px;
+  }
+  .hero .btn {
+    margin-top: 0;
   }
 }
