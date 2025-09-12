@@ -81,3 +81,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   resetTimer();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.innerWidth > 600) return; // Only on mobile
+
+  document.querySelectorAll('.service-title').forEach(function(title) {
+    title.addEventListener('click', function() {
+      // Close other open descriptions
+      document.querySelectorAll('.service').forEach(function(svc) {
+        if (svc !== title.parentElement) svc.classList.remove('active');
+      });
+      // Toggle current
+      title.parentElement.classList.toggle('active');
+    });
+  });
+});
