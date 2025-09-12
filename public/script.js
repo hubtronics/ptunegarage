@@ -41,22 +41,43 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 
 // Gallery fade effect on mobile
-if (window.innerWidth <= 600) {
-  const galleryFade = document.querySelector('.gallery-fade');
-  const galleryImages = document.querySelectorAll('.gallery-fade img');
-  let currentGalleryIndex = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  const gallery = document.querySelector('.gallery-fade');
+  if (!gallery) return;
 
-  function showFadeImage(index) {
-    galleryImages.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
+  const images = gallery.querySelectorAll('img');
+  const dotsContainer = gallery.querySelector('.gallery-dots');
+  let current = 0;
+  let timer;
+
+  // Create dots
+  images.forEach((_, idx) => {
+    const dot = document.createElement('span');
+    dot.classList.add('gallery-dot');
+    if (idx === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showImage(idx));
+    dotsContainer.appendChild(dot);
+  });
+
+  function showImage(idx) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === idx);
     });
+    dotsContainer.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
+    current = idx;
+    resetTimer();
   }
 
-  if (galleryFade && galleryImages.length > 1) {
-    showFadeImage(currentGalleryIndex);
-    setInterval(() => {
-      currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
-      showFadeImage(currentGalleryIndex);
-    }, 3000);
+  function nextImage() {
+    showImage((current + 1) % images.length);
   }
-}
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(nextImage, 3000); // Change every 3 seconds
+  }
+
+  resetTimer();
+});
