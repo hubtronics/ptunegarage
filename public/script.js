@@ -96,3 +96,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+// Mobile: toggle service description on click
+if (window.matchMedia('(max-width: 600px)').matches) {
+  document.querySelectorAll('.service').forEach(service => {
+    service.addEventListener('click', function(e) {
+      // Toggle active class
+      if (this.classList.contains('active')) {
+        this.classList.remove('active');
+      } else {
+        document.querySelectorAll('.service').forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+}
