@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #161414;
   background: #e8e0e0;
 }
 
@@ -18,9 +18,9 @@ a {
 
 /* ===== Header ===== */
 header {
-  background: linear-gradient(135deg, #0c3f4d, #263552);
-  color: #9b0f0f;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background: #ddd5d5;
+  color: #050505;
+  box-shadow: 0 4px 10px rgba(248, 244, 244, 0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -62,14 +62,14 @@ header .logo {
 .garage-name p {
   margin: 2px 0;
   font-size: 1.2rem;
-  color: #f1f1f1;
+  color: #0c0c0c;
   font-weight: 700;
 }
 
 .garage-name .location {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.1rem;
-  color: #e63946;
+  color: #121111;
   font-weight: 700;
   margin: 2px 0;
   letter-spacing: 0.5px;
@@ -77,7 +77,7 @@ header .logo {
 
 /* Navigation */
 nav {
-  background: hsl(234, 75%, 11%);
+  background: hsl(0, 20%, 97%);
   padding: 6px 6px;
 }
 
@@ -125,11 +125,11 @@ nav a:hover, nav a:focus {
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  color: #222;
+  color: #d5cece;
   text-align: center;
   padding: 80px 20px 60px 20px;
   overflow: hidden;
-  background: linear-gradient(120deg, #e3f6fd 0%, #e0e7ef 60%, #c9d6e3 100%);
+  background: #e7e3e3;
   min-height: 220px;
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(7,148,249,0.07);
@@ -200,12 +200,12 @@ nav a:hover, nav a:focus {
 
 .hero h2 {
   font-size: 2.4rem;
-  color: #0794f9;
+  color: #d40e0e;
   font-weight: 900;
   margin-bottom: 14px;
   letter-spacing: 1px;
-  text-shadow: 0 2px 12px #fff, 0 0 2px #0794f9;
-  background: rgba(255,255,255,0.7);
+  text-shadow: 0 2px 12px #e2ed0a, 0 0 2px #2fc0f0;
+  background: #ddd5d5;
   border-radius: 10px;
   padding: 8px 18px;
   display: inline-block;
@@ -214,9 +214,9 @@ nav a:hover, nav a:focus {
 
 .hero p {
   font-size: 1.25rem;
-  color: #222;
+  color: #e2ca0f;
   margin-bottom: 12px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(8, 8, 8, 0.6);
   border-radius: 8px;
   padding: 6px 14px;
   display: inline-block;
@@ -262,7 +262,7 @@ h2 {
   flex: 1;
   min-width: 300px;
   max-width: 350px;
-  background: #b0b7bd;
+  background: #617d96;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(247, 238, 238, 0.1);
@@ -406,16 +406,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+  header {
+    background: #222 !important; /* match hero section */
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 24px #111;
+  }
   body {
     background: #f5f5f5; /* Soft white background for the whole app */
-    color: #23272a;
+    color: #207fc7;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
 
   .header-top {
-    background: #23272a; /* Dark grey header */
+    background: #222; /* match hero section */
     color: #fff;
     box-shadow: 0 4px 24px #111;
     border-radius: 0 0 24px 24px;
@@ -433,14 +438,14 @@ footer {
   }
 
   .logo-link {
-    opacity: 0.35;
-    filter: grayscale(1);
+    /* opacity: 0.35; */
+    /* filter: grayscale(1); */
     animation: fadeIn 1.2s;
   }
 
   .hero {
-    background: #fff; /* Pure white background, no light blue */
-    color: #23272a;
+    background: #f5f3f3; /* Pure white background, no light blue */
+    color: #c22020;;
     border-radius: 18px;
     box-shadow: 0 4px 18px #23272a22;
     padding: 36px 8px 32px 8px;
@@ -459,7 +464,7 @@ footer {
     animation: fadeInLeft 1s;
   }
   .hero p {
-    background: #111; /* Black panel for subheadline */
+    background: #a03030; /* Black panel for subheadline */
     color: #fff;
     font-size: 1rem;
     border-radius: 6px;
@@ -820,7 +825,7 @@ header .btn,
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px #0000000a;
   transition: background 0.3s;
   width: auto;           /* Prevent full width */
   min-width: 120px      /* Optional: minimum width */
@@ -856,7 +861,7 @@ header .btn:hover,
 }
 @media (min-width: 601px) {
   .gallery-slider {
-    display: none;
+  background: #000 !important; /* Pure black background */
   }
   .gallery {
     display: flex;
@@ -975,7 +980,7 @@ header .btn:hover,
     display: none;
     margin: 0 0 0 12px;
     padding-left: 8px;
-    border-left: 2px solid #e3f2fd;
+    border-left: 2px solid #5487ab;
     font-size: 1.02rem;
     color: #333;
     word-break: break-word;
@@ -988,7 +993,7 @@ header .btn:hover,
     cursor: pointer;
     text-align: center;
     font-size: 1.15rem;
-    color: #0794f9;
+    color: #86a1b5;
     margin: 0 0 8px 0;
     font-weight: 900;
     letter-spacing: 1px;
@@ -1010,7 +1015,7 @@ header .btn:hover,
     gap: 6px;
   }
   .service {
-    background: #f7fbff;
+    background: #5187bd;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     padding: 6px 4px;
@@ -1051,7 +1056,7 @@ header .btn:hover,
     height: 70px;
     background: url('images/pwtune.png') no-repeat center center;
     background-size: contain;
-    opacity: 2.0; /* Faint logo */
+    /* opacity: 2.0; Faint logo */
     z-index: 0;
     pointer-events: none;
   }
@@ -1105,7 +1110,7 @@ header .btn:hover,
     width: 120px;
     max-width: 90vw;
     margin: 0 auto 8px auto;
-    filter: grayscale(1) opacity(0.85); /* Increase opacity for better readability */
+    /* filter: grayscale(1) opacity(0.85); Increase opacity for better readability */
     position: relative;
     z-index: 2;
   }
@@ -1143,14 +1148,14 @@ header .btn:hover,
 /* Hero section: softer, less bright background */
 .hero {
   position: relative;
-  color: #222;
+  color: #ddd5d5;
   text-align: center;
   padding: 80px 20px 60px 20px;
   overflow: hidden;
-  background: linear-gradient(120deg, #e3f6fd 0%, #e0e7ef 60%, #c9d6e3 100%);
+  background: #e7e2e2;
   min-height: 220px;
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(7,148,249,0.07);
+  box-shadow: 0 8px 32px rgba(10, 14, 16, 0.07);
 }
 
 @media (max-width: 600px) {
@@ -1158,7 +1163,7 @@ header .btn:hover,
     padding: 36px 8px 32px 8px;
     min-height: 180px;
     border-radius: 18px;
-    background: #fff; /* Pure white background, no light blue */
+    background: #ebe9e9; /* Pure white background, no light blue */
     box-shadow: 0 4px 18px #23272a22;
     color: #23272a;
   }
