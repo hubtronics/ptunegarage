@@ -1,4 +1,4 @@
-]/* ===== Global ===== */
+/* ===== Global ===== */
 * {
   margin: 0;
   padding: 0;
@@ -24,9 +24,19 @@ a {
 }
 
 /* ===== Header ===== */
+.root-vars {
+  /* fallback variables - change these to customize colors */
+}
+:root {
+  --nav-desktop-link: #ede9e9;
+  --nav-mobile-link: #0e0e0e;
+  --header-bg: #ffffff;
+  --overlay-bg: rgba(0,0,0,0.92);
+}
 .sr-header {
   width: 100%;
-  position: relative;
+  position: sticky; /* keep header visible while scrolling */
+  top: 0;
   z-index: 1000;
   background: #fff;
 }
@@ -36,10 +46,10 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: #000000;   /* ✅ solid white background */
-  height: 70px;          /* fix nav height */
+  background: #000000;             /* ✅ navbar stays white */
+  height: 70px;
   padding: 0 15px;
-  border-bottom: 1px solid #ddd; /* subtle divider */
+  border-bottom: 1px solid #ddd;
 }
 
 .sr-logo img {
@@ -63,7 +73,7 @@ a {
   display: block;
   width: 25px;
   height: 3px;
-  background: #efecec;
+  background: #f5f1f1;            /* ✅ dark hamburger lines */
   position: relative;
   border-radius: 2px;
 }
@@ -83,11 +93,7 @@ a {
   top: 7px;
 }
 
-/* Divider line */
-.sr-header-bar {
-  border-bottom: 1px solid #e0e0e0;
-}
-
+/* Banner */
 .sr-banner {
   background: #fff;
   color: #c00;
@@ -123,8 +129,14 @@ a {
 .sr-nav a {
   display: block;
   padding: 12px 15px;
-  color: #333;
+  color: var(--nav-desktop-link, #080808);
   font-weight: 600;
+}
+
+/* mobile override: different color for mobile nav and search icon */
+@media (max-width: 767px) {
+  .sr-nav a { color: var(--nav-mobile-link, #fff); }
+  .sr-search-icon { color: var(--nav-mobile-link, #fff); }
 }
 
 /* ===== Hero ===== */
@@ -139,7 +151,6 @@ a {
   overflow: hidden;
 }
 
-/* Hero background wrapper */
 .sr-hero-bg {
   position: absolute;
   top: 0;
@@ -150,20 +161,27 @@ a {
   z-index: -1;
 }
 
-/* Make image cover fully */
 .sr-hero-bg img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* ✅ ensures full cover */
-  object-position: center center; /* ✅ keeps it centered */
+  object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
-
+/* dark overlay for text contrast */
+.sr-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
 
 .sr-hero-content {
   position: relative;
-  z-index: 8;
+  z-index: 1;
   text-align: left;
   color: #f3f7f8;
   padding: 0 10px;
@@ -173,6 +191,7 @@ a {
 .sr-hero-content h1 {
   font-size: 1.8rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .sr-whatsapp-btn {
@@ -383,46 +402,29 @@ a {
   }
   .sr-hamburger {
     display: none;
-    .sr-hero-content {
-      /* place hero text in the bottom-left corner */
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-      z-index: 8;
-      text-align: left;
-      color: #f3f7f8;
-      padding: 0 10px;
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .sr-hero-content h1 {
-      font-size: 1.8rem;
-      margin: 0;
-      line-height: 1.05;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .sr-whatsapp-btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #25d366;
-      color: #fff;
-      border-radius: 4px;
-      font-weight: bold;
-      align-self: flex-start; /* keep button aligned left under the heading */
-    }
+  }
+  .sr-hero-content {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    max-width: 600px;
+  }
+}
 
-    /* Responsive: move to center and reduce sizes for small phones */
-    @media (max-width: 480px) {
-      .sr-hero-content {
-        left: 12px;
-        bottom: 12px;
-        max-width: calc(100% - 24px);
-      }
-      .sr-hero-content h1 { font-size: 1.15rem; }
-      .sr-whatsapp-btn { padding: 9px 14px; font-size: 0.95rem; }
-    }
+@media (max-width: 480px) {
+  .sr-hero-content {
+    left: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+  }
+  .sr-hero-content h1 {
+    font-size: 1.15rem;
+  }
+  .sr-whatsapp-btn {
+    padding: 9px 14px;
+    font-size: 0.95rem;
+  }
+}
 
 @media (min-width: 1024px) {
   .service-list {
