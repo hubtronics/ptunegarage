@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google Fonts: Roboto Slab -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Powertune Auto - Westlands Garage</title>
   <meta name="description" content="Powertune Auto Garage in Westlands, Nairobi. Expert car servicing, repairs, diagnostics, and more. Book your appointment today!">
@@ -42,51 +44,43 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="header-top">
-      <div class="garage-name">
-        <h1>
-          <a href="index.html" style="color:inherit;text-decoration:none;">Powertune Auto Garage</a>
-        </h1>
-        <p>PRECISION • POWER • PERFORMANCE</p>
-        <p class="location">Westlands, Muthithi 60</p>
-        <nav>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#booking">Booking</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <a href="index.html" class="logo-link">
-        <img src="images/pwtune.png" alt="Powertune Auto Logo" class="logo">
+  <header class="sr-header">
+    <div class="sr-header-bar">
+      <a href="index.html" class="sr-logo">
+        <img src="images/pwtune.png" alt="Powertune Auto Logo">
       </a>
-      <span class="map-icon" id="openMap">
-        <img src="images/ggle.svg" alt="Map" style="width:60px;height:auto;cursor:pointer;">
-      </span>
+      <button class="sr-hamburger" id="srHamburger" aria-label="Open navigation"><span></span></button>
+      <nav class="sr-nav" id="srNav">
+        <ul>
+          <li class="active"><a href="#home">HOME</a></li>
+          <li><a href="#transmission">TRANSMISSION REPAIR</a></li>
+          <li><a href="#engine">ENGINE REPAIR</a></li>
+          <li><a href="#bodyshop">AUTO BODY SHOP</a></li>
+          <li class="dropdown"><a href="#services">AUTO SERVICES</a></li>
+          <li class="dropdown"><a href="#brands">BRANDS</a></li>
+          <li class="dropdown"><a href="#about">ABOUT US</a></li>
+          <li><a href="#search"><span class="sr-search-icon">&#128269;</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sr-banner">
+      <span>Talk to a Service Expert: <span class="sr-banner-phone">+254 748 638 225</span></span>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-image-scroll">
-      <div class="hero-image-scroll-inner">
-        <img src="images/audi.svg" class="brand-svg" alt="Audi">
-        <img src="images/bmw.svg" class="brand-svg" alt="BMW">
-        <img src="images/benz.svg" class="brand-svg" alt="Benz">
-        <img src="images/vw.svg" class="brand-svg" alt="VW">
-        <!-- Repeat SVGs for smooth scroll -->
-        <img src="images/audi.svg" class="brand-svg" alt="Audi">
-        <img src="images/bmw.svg" class="brand-svg" alt="BMW">
-        <img src="images/benz.svg" class="brand-svg" alt="Benz">
-        <img src="images/vw.svg" class="brand-svg" alt="VW">
-      </div>
+  <section class="sr-hero">
+    <div class="sr-hero-bg">
+      <img src="images/BMWD.WEBP" alt="Hero Car" />
+      <div class="sr-hero-overlay"></div>
     </div>
-    <h2>Your Trusted Auto Garage in Nairobi</h2>
-    <p>Expert car servicing, repairs & diagnostics.</p>
-    <a href="#contact" class="btn">Book Appointment</a>
+    <div class="sr-hero-content">
+    </div>
+    <div class="sr-contact-icons">
+      <a href="https://wa.me/254748638225" class="sr-icon sr-icon-whatsapp" title="WhatsApp"><img src="images/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="tel:+254748638225" class="sr-icon sr-icon-phone" title="Call"><img src="images/phone.svg" alt="Phone"></a>
+      <!-- <a href="#" class="sr-icon sr-icon-close" title="Close"><img src="images/WHATSAPP.svg" alt="Close"></a> -->
+    </div>
   </section>
 
   <!-- Services -->
@@ -94,76 +88,24 @@
   <h2>Our Services</h2>
   <div class="service-list">
     <div class="service">
-      <h3 class="service-title">🔧 Complete Vehicle Diagnostics</h3>
-      <img src="images/diag1.png" alt="Diagnostics" class="service-img" />
-      <p class="service-desc">
-        We use advanced diagnostic tools to quickly identify issues in your vehicle’s engine, transmission, electrical system, and more. Our expert team ensures accurate troubleshooting to save you time and money.<br>
-        <!-- <strong>Keywords:</strong> vehicle diagnostics Nairobi, car diagnostic service -->
-      </p>
+      <h3>Engine Diagnostics</h3>
+      <p>Modern tools to detect and fix engine issues.</p>
     </div>
     <div class="service">
-      <h3 class="service-title">🛠 Engine Maintenance & Service</h3>
-      <img src="images/vehicle service.png" alt="Engine" class="service-img" />
-      <p class="service-desc">
-        Keep your engine running smoothly with regular maintenance, oil changes, and tune-ups. We handle everything from basic servicing to complex engine repairs.<br>
-        <!-- <strong>Keywords:</strong> engine service, car engine maintenance -->
-      </p>
+      <h3>Car Servicing</h3>
+      <p>Regular maintenance for smooth performance.</p>
     </div>
     <div class="service">
-      <h3 class="service-title">⚙️ Gearbox Maintenance & Service</h3>
-      <img src="images/gearbox.png" alt="Gearbox" class="service-img" />
-      <p class="service-desc">
-        We specialize in both manual and automatic gearbox service. From oil changes to full gearbox overhauls, we ensure smooth gear shifting and extended transmission life.<br>
-        <!-- <strong>Keywords:</strong> gearbox repair, transmission service -->
-      </p>
+      <h3>Repairs</h3>
+      <p>From brakes to suspension, we fix it all.</p>
     </div>
     <div class="service">
-      <h3 class="service-title">💻 ECU/TCU Coding, Cloning & Remapping</h3>
-      <img src="images/ecu.png" alt="ECU TCU" class="service-img" />
-      <p class="service-desc">
-        Unlock your vehicle’s full potential with ECU and TCU services. We offer coding, cloning, and performance remapping to improve power, fuel efficiency, and reliability.<br>
-        <!-- <strong>Keywords:</strong> ECU coding, ECU remapping Kenya -->
-      </p>
+      <h3>TCU/ECU Cloning &amp; Remapping</h3>
+      <p>Advanced electronic control unit cloning and performance remapping for improved efficiency and power.</p>
     </div>
     <div class="service">
-      <h3 class="service-title">🌐 Online Vehicle Coding</h3>
-      <img src="images/online coding.png" alt="Online Coding" class="service-img" />
-      <p class="service-desc">
-        No matter where you are, our online vehicle coding service allows us to configure, program, or activate hidden features remotely.<br>
-        <!-- <strong>Keywords:</strong> online vehicle coding, remote car coding -->
-      </p>
-    </div>
-    <div class="service">
-      <h3 class="service-title">🔩 Mechatronics Service & Repair</h3>
-      <img src="images/mechatronics.png" alt="Mechatronics" class="service-img" />
-      <p class="service-desc">
-        We repair and service mechatronic units for DSG and automatic transmissions, restoring smooth shifting and preventing costly replacements.<br>
-        <!-- <strong>Keywords:</strong> mechatronic repair, DSG service -->
-      </p>
-    </div>
-    <div class="service">
-      <h3 class="service-title">🚙 Towing Services</h3>
-      <img src="images/towing-vehicle_9363555.png" alt="Towing" class="service-img" />
-      <p class="service-desc">
-        Stranded on the road? Our reliable towing service is available to safely transport your vehicle to our garage for quick repair.<br>
-        <!-- <strong>Keywords:</strong> towing service, emergency car towing -->
-      </p>
-    </div>
-    <div class="service">
-      <h3 class="service-title">🛞 Suspension Maintenance & Repair</h3>
-      <img src="images/suspension_887235.png" alt="Suspension" class="service-img" />
-      <p class="service-desc">
-        We inspect, service, and repair your vehicle’s suspension system for a smoother, safer ride. From shock absorbers to bushings, we ensure optimal handling and comfort.<br>
-        <!-- <strong>Keywords:</strong> suspension repair, car suspension Nairobi -->
-      </p>
-    </div>
-    <div class="service">
-      <h3 class="service-title">🛒 Genuine Parts Importation</h3>
-      <img src="images/import_10981468.png" alt="Genuine Parts" class="service-img" />
-      <p class="service-desc">
-        We source and import genuine OEM parts for all major vehicle brands, ensuring quality and reliability for every repair.<br>
-        <!-- <strong>Keywords:</strong> genuine car parts Nairobi, OEM parts import -->
-      </p>
+      <h3>Towing</h3>
+      <p>Reliable towing services for breakdowns and emergencies, available on request.</p>
     </div>
   </div>
   <div class="brand-scroll">
@@ -183,9 +125,9 @@
   <section id="gallery">
     <h2>Our Garage</h2>
     <div class="gallery-fade">
-      <img src="images/IMG-20250909-WA0013 (1).jpg" alt="Garage 1" class="active">
-      <img src="images/IMG-20250909-WA0013 (7).jpg" alt="Garage 2">
-      <img src="images/IMG-20250909-WA0013 (6).jpg" alt="Garage 3">
+      <img src="images/ourgarage.jpg" alt="Garage 1" class="active">
+      <img src="images/ourgarage1.jpg" alt="Garage 2">
+      <img src="images/ourgarage2.jpg" alt="Garage 3">
       <!-- Add more images as needed -->
       <div class="gallery-dots"></div>
     </div>

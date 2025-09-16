@@ -1,3 +1,39 @@
+// Overlay menu logic (only overlay, not old nav)
+const mobileHamburger = document.getElementById('mobileHamburger');
+const mobileOverlayMenu = document.getElementById('mobileOverlayMenu');
+const mobileOverlayClose = document.getElementById('mobileOverlayClose');
+if (mobileHamburger && mobileOverlayMenu) {
+  mobileHamburger.addEventListener('click', function() {
+    mobileOverlayMenu.classList.add('open');
+  });
+}
+if (mobileOverlayClose && mobileOverlayMenu) {
+  mobileOverlayClose.addEventListener('click', function() {
+    mobileOverlayMenu.classList.remove('open');
+  });
+}
+// Optional: close overlay when clicking a nav link
+if (mobileOverlayMenu) {
+  mobileOverlayMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileOverlayMenu.classList.remove('open');
+    });
+  });
+}
+// Hamburger menu toggle for mobile nav
+const srHamburger = document.getElementById('srHamburger');
+const srNav = document.getElementById('srNav');
+if (srHamburger && srNav) {
+  srHamburger.addEventListener('click', function() {
+    srNav.classList.toggle('open');
+  });
+  // Optional: close nav when clicking a link (mobile UX)
+  srNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      srNav.classList.remove('open');
+    });
+  });
+}
 // Booking form handler
 document.getElementById('bookingForm').onsubmit = function(e) {
   e.preventDefault();
@@ -111,3 +147,36 @@ if (window.matchMedia('(max-width: 600px)').matches) {
     });
   });
 }
+
+// Split carousel auto-scroll and manual control for mobile
+function initSplitCarousel() {
+  if (window.matchMedia('(max-width: 600px)').matches) {
+    const topCards = document.querySelectorAll('.carousel-top .service');
+    const bottomCards = document.querySelectorAll('.carousel-bottom .service');
+    let topIndex = 0;
+    let bottomIndex = bottomCards.length - 1;
+    function showCards() {
+      topCards.forEach((card, i) => card.classList.toggle('active', i === topIndex));
+      bottomCards.forEach((card, i) => card.classList.toggle('active', i === bottomIndex));
+    }
+    function nextTop() {
+      topIndex = (topIndex + 1) % topCards.length;
+      showCards();
+    }
+    function prevBottom() {
+      bottomIndex = (bottomIndex - 1 + bottomCards.length) % bottomCards.length;
+      showCards();
+    }
+    // Auto-scroll every 3 seconds
+    setInterval(() => {
+      nextTop();
+      prevBottom();
+    }, 3000);
+    // Manual tap/swipe for top
+    document.querySelector('.carousel-top').addEventListener('click', nextTop);
+    // Manual tap/swipe for bottom
+    document.querySelector('.carousel-bottom').addEventListener('click', prevBottom);
+    showCards();
+  }
+}
+document.addEventListener('DOMContentLoaded', initSplitCarousel);
