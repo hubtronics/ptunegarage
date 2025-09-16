@@ -76,46 +76,92 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Gallery fade effect on mobile
-document.addEventListener("DOMContentLoaded", function() {
+// Sliding gallery (carousel)
+document.addEventListener('DOMContentLoaded', function() {
   const gallery = document.querySelector('.gallery-fade');
   if (!gallery) return;
 
-  const images = gallery.querySelectorAll('img');
-  const dotsContainer = gallery.querySelector('.gallery-dots');
+  const images = Array.from(gallery.querySelectorAll('img'));
+  const dotsContainer = gallery.querySelector('.gallery-dots') || document.createElement('div');
+
+  // Wrap images in a track
+  const track = document.createElement('div');
+  track.className = 'gallery-track';
+  // wrap each image in a slide container so flex sizing is reliable
+  const slides = images.map(img => {
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
+    slide.appendChild(img);
+    return slide;
+  });
+  // insert track first so flex layout is computed by the browser
+  gallery.insertBefore(track, gallery.querySelector('.gallery-dots'));
+  slides.forEach(s => track.appendChild(s));
+
+  // ensure track is a direct child and gallery overflow hides extra slides
+  gallery.style.position = gallery.style.position || 'relative';
+  gallery.style.overflow = 'hidden';
+
+  // maintain explicit pixel widths so translateX in pixels is precise
+  let slideWidth = 0;
+  function updateSizes() {
+    slideWidth = gallery.clientWidth;
+    slides.forEach(s => { s.style.width = slideWidth + 'px'; });
+    track.style.width = (slideWidth * slides.length) + 'px';
+    // reposition to current after sizes change
+    track.style.transform = `translateX(${-current * slideWidth}px)`;
+  }
+  // Ensure dots container exists
+  if (!gallery.querySelector('.gallery-dots')) {
+    dotsContainer.className = 'gallery-dots';
+    gallery.appendChild(dotsContainer);
+  }
+  // initial sizing after elements are in DOM
+  updateSizes();
+
   let current = 0;
-  let timer;
+  let timer = null;
+  const interval = 3000;
+
+  function goTo(index) {
+    current = (index + images.length) % images.length;
+    // move track so that slide at `current` is visible using computed slideWidth
+    const offset = -current * slideWidth;
+    track.style.transform = `translateX(${offset}px)`;
+    // update dots
+    Array.from(dotsContainer.children).forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  // handle resize: recalc sizes and position so current slide remains visible
+  window.addEventListener('resize', function() {
+    clearTimeout(window._galleryResizeTimeout);
+    window._galleryResizeTimeout = setTimeout(() => updateSizes(), 120);
+  });
 
   // Create dots
   images.forEach((_, idx) => {
-    const dot = document.createElement('span');
-    dot.classList.add('gallery-dot');
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot';
     if (idx === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => showImage(idx));
+    dot.addEventListener('click', () => {
+      goTo(idx);
+      restart();
+    });
     dotsContainer.appendChild(dot);
   });
 
-  function showImage(idx) {
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === idx);
-    });
-    dotsContainer.querySelectorAll('.gallery-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === idx);
-    });
-    current = idx;
-    resetTimer();
-  }
+  function next() { goTo((current + 1) % images.length); }
+  function start() { if (!timer) timer = setInterval(next, interval); }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
 
-  function nextImage() {
-    showImage((current + 1) % images.length);
-  }
+  // Pause on hover
+  gallery.addEventListener('mouseenter', stop);
+  gallery.addEventListener('mouseleave', start);
 
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(nextImage, 3000); // Change every 3 seconds
-  }
-
-  resetTimer();
+  // start autoplay
+  goTo(0);
+  start();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
