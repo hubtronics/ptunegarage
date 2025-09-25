@@ -2,193 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Google Fonts: Roboto Slab -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Powertune Auto - Westlands Garage</title>
-  <meta name="description" content="Powertune Auto Garage in Westlands, Nairobi. Expert car servicing, repairs, diagnostics, and more. Book your appointment today!">
-  <meta name="keywords" content="Powertune Auto, Garage, Nairobi, Westlands, Car Service, Repairs, Diagnostics, Booking">
+  <title>Powertune Auto Garage</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- Add SEO tags below this line -->
-  <meta property="og:title" content="Powertune Auto Garage - Westlands, Nairobi">
-  <meta property="og:description" content="Expert car servicing, repairs & diagnostics in Westlands, Nairobi. Book your appointment today!">
-  <meta property="og:url" content="https://powertune.co.ke/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://powertune.co.ke/images/pwtune.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Powertune Auto Garage - Westlands, Nairobi">
-  <meta name="twitter:description" content="Expert car servicing, repairs & diagnostics in Westlands, Nairobi. Book your appointment today!">
-  <meta name="twitter:image" content="https://powertune.co.ke/images/pwtune.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "Powertune Auto Garage",
-    "image": "https://powertune.co.ke/images/pwtune.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Muthithi 60, Westlands",
-      "addressLocality": "Nairobi",
-      "addressCountry": "KE"
-    },
-    "telephone": "+2547XXXXXXXX",
-    "url": "https://powertune.co.ke/"
-  }
-  </script>
-  <!-- End SEO tags -->
 </head>
 <body>
-  <!-- Header -->
-  <header class="sr-header">
-    <div class="sr-header-bar">
-      <a href="index.html" class="sr-logo">
+
+  <!-- ✅ Top Bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Car Repair and Service in Kenya</span>
+      <span class="topbar-divider">|</span>
+      <span>Monday - Sunday 8:00AM - 6:00PM</span>
+      <span class="topbar-divider">|</span>
+      <span>Schedule Your Service Appointment <a href="tel:0521217425">0748 638225</a></span>
+    </div>
+  </div>
+
+  <!-- ✅ Responsive Dropdown Menu -->
+  <nav id="menu">
+    <div class="menu-container">
+      <div class="menu-logo">
         <img src="images/pwtune.png" alt="Powertune Auto Logo">
-      </a>
-      <button class="sr-hamburger" id="srHamburger" aria-label="Open navigation"><span></span></button>
-      <nav class="sr-nav" id="srNav">
-        <ul>
-          <li class="active"><a href="#home">HOME</a></li>
-          <li><a href="#transmission">TRANSMISSION REPAIR</a></li>
-          <li><a href="#engine">ENGINE REPAIR</a></li>
-          <li><a href="#bodyshop">AUTO BODY SHOP</a></li>
-          <li class="dropdown"><a href="#services">AUTO SERVICES</a></li>
-          <li class="dropdown"><a href="#brands">BRANDS</a></li>
-          <li class="dropdown"><a href="#about">ABOUT US</a></li>
-          <li><a href="#search"><span class="sr-search-icon">&#128269;</span></a></li>
-        </ul>
-      </nav>
+      </div>
+      <input type="checkbox" id="responsive-menu" onclick="updatemenu()">
+      <label for="responsive-menu"></label>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a class="dropdown-arrow" href="#products">Products</a>
+          <ul class="sub-menus">
+            <li><a href="#prod1">Genuine Parts</a></li>
+            <li><a href="#prod2">Genuine service</a></li>
+            <li><a href="#prod3">Products 3</a></li>
+            <li><a href="#prod4">Products 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a class="dropdown-arrow" href="#services">Services</a>
+          <ul class="sub-menus">
+            <li><a href="#serv1">Engine Service</a></li>
+            <li><a href="#serv2">Gearbox Service</a></li>
+            <li><a href="#serv3">Suspension </a></li>
+            <li><a href="#serv3">Gearbox Coding </a></li>
+            <li><a href="#serv3">Software Update </a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
     </div>
-    <div class="sr-banner">
-      <span>Talk to a Service Expert: <span class="sr-banner-phone">+254 748 638 225</span></span>
-    </div>
-  </header>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="sr-hero">
-    <div class="sr-hero-bg">
-      <img src="images/BMWD.png" alt="Hero Car" />
-      <div class="sr-hero-overlay"></div>
-    </div>
-    <div class="sr-hero-content">
-    </div>
-    <div class="sr-contact-icons">
-      <a href="https://wa.me/254748638225" class="sr-icon sr-icon-whatsapp" title="WhatsApp"><img src="images/what.svg" alt="WhatsApp"></a>
-      <a href="tel:+254748638225" class="sr-icon sr-icon-phone" title="Call"><img src="images/phone1.svg" alt="Phone"></a>
-      <!-- <a href="#" class="sr-icon sr-icon-close" title="Close"><img src="images/WHATSAPP.svg" alt="Close"></a> -->
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-  <h2>Our Services</h2>
-  <div class="service-list">
-    <div class="service">
-      <h3>Engine Diagnostics</h3>
-      <p>Modern tools to detect and fix engine issues.</p>
-    </div>
-    <div class="service">
-      <h3>Car Servicing</h3>
-      <p>Regular maintenance for smooth performance.</p>
-    </div>
-    <div class="service">
-      <h3>Repairs</h3>
-      <p>From brakes to suspension, we fix it all.</p>
-    </div>
-    <div class="service">
-      <h3>TCU/ECU Cloning &amp; Remapping</h3>
-      <p>Advanced electronic control unit cloning and performance remapping for improved efficiency and power.</p>
-    </div>
-    <div class="service">
-      <h3>Towing</h3>
-      <p>Reliable towing services for breakdowns and emergencies, available on request.</p>
-    </div>
-  </div>
-  <div class="brand-scroll">
-    <img src="images/bmw.svg" alt="BMW" class="brand-svg">
-    <img src="images/audi.svg" alt="Audi" class="brand-svg">
-    <img src="images/vw.svg" alt="VW" class="brand-svg">
-    <img src="images/benz.svg" alt="Benz" class="brand-svg">
-    <!-- Duplicate for seamless loop -->
-    <img src="images/bmw.svg" alt="BMW" class="brand-svg">
-    <img src="images/audi.svg" alt="Audi" class="brand-svg">
-    <img src="images/vw.svg" alt="VW" class="brand-svg">
-    <img src="images/benz.svg" alt="Benz" class="brand-svg">
-  </div>
-</section>
-
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Our Garage</h2>
-    <div class="gallery-fade">
-      <img src="images/ourgarage4.jpg" alt="Garage 1" class="active">
-      <!-- <img src="images/ourgarage1.jpg" alt="Garage 2"> -->
-      <!-- <img src="images/ourgarage2.jpg" alt="Garage 3"> -->
-      <!-- Add more images as needed -->
-      <div class="gallery-dots"></div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Powertune Auto is a professional garage located at Muthithi 60, Westlands. We specialize in quality repairs, diagnostics, and servicing for all vehicle types. Our goal is to keep your car running at its best.</p>
-  </section>
-
-  <!-- Contact Section -->
-<section id="contact">
-  <h2>Book Your Appointment</h2>
-  <form id="bookingForm" action="https://formspree.io/f/mkgvyvpe" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number" required>
-      <input type="text" name="vin" placeholder="Vehicle VIN" >
-      <!-- <input type="text" name="make" placeholder="Vehicle Make" >
-      <input type="text" name="model" placeholder="Vehicle Model" > -->
-      <select name="service" required>
-        <option value="" disabled selected>Select Service</option>
-        <option value="diagnostics">Engine Diagnostics</option>
-        <option value="servicing">Car Servicing</option>
-        <option value="repairs">Repairs</option>
-      </select>
-      <input type="date" name="date" required>
-      <textarea name="message" placeholder="Additional Details"></textarea>
-      <button type="submit">Book Appointment</button>
-    </form>
-    <div id="bookingSuccess" style="display:none; color:green; margin-top:10px;">
-      Thank you! Your booking has been received.
-    </div>
-</section>
-
-  <!-- Footer Section -->
-<footer id="footer-contact">
-  <div class="footer-details">
-    <h3>Contact Details</h3>
-    <p><strong>Location:</strong> Muthithi 60, Westlands, Nairobi</p>
-    <p><strong>Phone:</strong> <a href="tel:+254748638225">+254 748 638 225</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@powertune.co.ke">info@powertune.co.ke</a></p>
-    <p><strong>Working Hours:</strong> Mon-Sat: 8:00am - 6:00pm, Sun: Closed</p>
-    <h4>Terms &amp; Conditions</h4>
-    <p>All services are subject to our standard terms and conditions. Please contact us for details.</p>
-  </div>
-  <div class="footer-copyright">
-    <p>&copy; 2025 Powertune Auto | All Rights Reserved</p>
-  </div>
-</footer>
-
-  <!-- Map Modal -->
-<div id="mapModal" class="map-modal">
-  <div class="map-modal-content">
-    <span class="close-map" id="closeMap">&times;</span>
-    <iframe
-      src="https://www.google.com/maps?q=Muthithi+60,+Westlands,+Nairobi&output=embed"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <!-- svg roll -->
+   
+<div class="svg-spacer">
+  <div class="svg-spacer-inner">
+    <img src="images/vw.svg" alt="SVG Spacer" />
+    <img src="images/mercedesb.svg" alt="SVG Spacer" />
+    <img src="images/bmw.svg" alt="SVG Spacer" />
+    <img src="images/Audi_logo.svg" alt="SVG Spacer" />
+    <img src="images/vw.svg" alt="SVG Spacer" />
+    <img src="images/mercedesb.svg" alt="SVG Spacer" />
+    <img src="images/bmw.svg" alt="SVG Spacer" />
+    <img src="images/Audi_logo.svg" alt="SVG Spacer" />
+    <img src="images/vw.svg" alt="SVG Spacer" />
   </div>
 </div>
+
+  <!-- ✅ Hero Section -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="glitch-wrapper">
+        <div class="glitch" data-text="Welcome to Powertune Auto Garage">Welcome to Powertune Auto Garage</div>
+      </div>
+      <div class="inhero">
+        <div class="inhero-inner1">
+          <p>Your trusted partner for all vehicle repairs and tuning solutions</p>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#services" class="btn">Our Services</a>
+        <a href="#contact" class="btn btn-alt">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Diagnostics</h3>
+        <p>Advanced vehicle diagnostics and fault finding.</p>
+      </div>
+      <div class="service-card">
+        <h3>ECU Remapping</h3>
+        <p>Performance tuning for maximum efficiency.</p>
+      </div>
+      <div class="service-card">
+        <h3>Transmission</h3>
+        <p>Expert TCM/gearbox repairs and coding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why Choose Us Section ===== -->
+<section class="why-choose-us">
+  <h2>Why Choose Powertune Auto Garage?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <img src="images/engine.jpg" alt="Expert Technicians">
+      <h3>Expert Technicians</h3>
+      <p>Our certified mechanics use the latest diagnostic tools and genuine parts for every repair.</p>
+    </div>
+    <div class="why-card">
+      <img src="images/diag1.png" alt="Advanced Diagnostics">
+      <h3>Advanced Diagnostics</h3>
+      <p>We use cutting-edge technology to quickly and accurately diagnose your vehicle’s issues.</p>
+    </div>
+    <div class="why-card">
+      <img src="images/towing-vehicle_9363555.png" alt="Towing Service">
+      <h3>24/7 Towing</h3>
+      <p>Stranded? Our reliable towing service is available around the clock for your peace of mind.</p>
+    </div>
+    <div class="why-card">
+      <img src="images/vehicle service.png" alt="Customer Satisfaction">
+      <h3>Customer Satisfaction</h3>
+      <p>We pride ourselves on transparent pricing, honest advice, and friendly service.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Featured Services Section ===== -->
+<section class="featured-services">
+  <h2>Our Featured Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="images/enginediagnosis.jpg" alt="Engine Diagnostics">
+      <h4>Engine Diagnostics</h4>
+      <p>Comprehensive engine checks and repairs for all makes and models.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/gearbox.png" alt="Transmission Repair">
+      <h4>Transmission Repair</h4>
+      <p>Expert transmission and gearbox repairs, coding, and replacements.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/suspension_887235.png" alt="Suspension Service">
+      <h4>Suspension Service</h4>
+      <p>Smooth out your ride with our advanced suspension diagnostics and repairs.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/ecu.png" alt="ECU Programming">
+      <h4>ECU Programming</h4>
+      <p>Latest software updates and custom tuning for optimal performance.</p>
+    </div>
+  </div>
+  <a href="#services" class="btn btn-alt" style="margin-top:32px;">See All Services</a>
+</section>
+
+<!-- ===== Gallery Section ===== -->
+<section class="gallery-showcase">
+  <h2>Our Garage Gallery</h2>
+  <div class="gallery-carousel">
+    <img src="images/ourgarage.jpg" alt="Garage 1">
+    <img src="images/ourgarage1.jpg" alt="Garage 2">
+    <img src="images/ourgarage2.jpg" alt="Garage 3">
+    <img src="images/ourgarage4.jpg" alt="Garage 4">
+  </div>
+</section>
+
+<!-- ===== Brands We Service ===== -->
+<section class="brands-section">
+  <h2>Brands We Service</h2>
+  <div class="brands-logos">
+    <img src="images/vw.svg" alt="VW">
+    <img src="images/mercedesb.svg" alt="Mercedes">
+    <img src="images/bmw.svg" alt="BMW">
+    <img src="images/Audi_logo.svg" alt="Audi">
+    <img src="images/benz.svg" alt="Benz">
+    <img src="images/audi.svg" alt="Audi">
+  </div>
+</section>
+
+  <!-- ✅ Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://formspree.io/f/mkgvyvpe" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="vin" placeholder="Vehicle VIN Number" required>
+      <input type="date" name="date" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <div class="form-actions">
+        <button type="submit" class="btn">Send</button>
+        <a href="https://wa.me/254748638225" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+      </div>
+      <div id="form-success" style="display:none;color:#009900;margin-top:16px;font-weight:bold;">
+        Thank you! Your message has been sent.
+      </div>
+    </form>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>© 2025 Powertune Auto Garage | Designed with passion</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
